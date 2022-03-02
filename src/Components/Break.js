@@ -6,10 +6,10 @@ export default function Break(props){
     
     return(
         <div className="break">
-            <h3 id="break-label">Break label</h3>
-            <img src={up} onClick={props.inc}></img>
-            <span>{props.bl}</span>
-            <img src={down} onClick={props.dec}></img>
+            <h3 id="break-label">Break Length</h3>
+            <img src={up} onClick={props.inc} id="break-increment"></img>
+            <span id="break-length">{props.bl}</span>
+            <img src={down} onClick={props.dec} id="break-decrement"></img>
         </div>
     );
 }

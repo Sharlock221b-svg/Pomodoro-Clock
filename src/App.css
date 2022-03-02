@@ -19,3 +19,14 @@
   font-size: larger;
   padding: 5px;
 }
+
+.session img{
+  height: 25px;
+  image-rendering: auto;
+}
+
+.session span{
+  font-weight: 700;
+  font-size: larger;
+  padding: 5px;
+}
