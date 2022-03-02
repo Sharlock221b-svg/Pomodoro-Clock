@@ -8,3 +8,14 @@
 .head h2{
   text-align: center;
 }
+
+.break img{
+    height: 25px;
+    image-rendering: auto;
+}
+
+.break span{
+  font-weight: 700;
+  font-size: larger;
+  padding: 5px;
+}
