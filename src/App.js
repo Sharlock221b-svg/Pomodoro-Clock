@@ -7,8 +7,8 @@ import Clock from './Components/Clock';
 function App() {
   const [bl,setBl] = React.useState(5);
   const [sl,setSl] = React.useState(25);
-  const [timeLeft,setTimeLeft] = React.useState("25:00");
   const [session,setSession] = React.useState(true);
+  const [run,setRun] = React.useState(false);
 
   function incBl(){
     if(bl === 60){
@@ -39,14 +39,9 @@ function App() {
   function reset(){
     setBl(5);
     setSl(25);
-    setTimeLeft("25:00");
   }
 
-  function handleOn(){
-    if(session){
-       
-    }
-  }
+ 
 
   return (
     <div className="App">
@@ -55,7 +50,7 @@ function App() {
       </div>
       <Break bl={bl} inc={incBl} dec={decBl}/>
       <Session sl={sl} inc={incSl} dec={decSl}/>
-      <Clock timeLeft={timeLeft} reset={reset} handleOn={handleOn}/>
+      <Clock reset={reset} session={session} sl={sl} bl={bl}/>
     </div>
   );
 }
