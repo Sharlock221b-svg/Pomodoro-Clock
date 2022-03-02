@@ -3,6 +3,8 @@
   margin-left: auto;
   margin-right: auto;
   border: 2px solid black;
+  width: 70%;
+  text-align: center;
 }
 
 .head h2{
@@ -29,4 +31,14 @@
   font-weight: 700;
   font-size: larger;
   padding: 5px;
+}
+
+.clock img{
+  height: 25px;
+  image-rendering: auto;
+}
+
+.clock span{
+    background-color: rgb(107, 192, 248);
+    margin-right: 9px;
 }
