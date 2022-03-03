@@ -27,7 +27,7 @@ export default function Clock(props) {
       setTime(ans - 1);
     }
     console.log(timeStamp);
-  }, [props.sl, props.bl]);
+  }, [props.sl, props.bl,props.session]);
 
   function handle() {
     if (props.session) {
@@ -42,6 +42,25 @@ export default function Clock(props) {
         ss = "0" + ss;
       }
       setTimeStamp(`${mm}:${ss}`);
+      if(mm === "00" && ss === "00"){
+        props.setSession(!props.session);
+      }
+    }
+    else{
+      setTime((time) => time - 1);
+      let mm = Math.floor(time / 60);
+      if (mm < 10) {
+        mm = "0" + mm;
+      }
+      //console.log(mm);
+      let ss = Math.floor(time % 60);
+      if(ss < 10){
+        ss = "0" + ss;
+      }
+      setTimeStamp(`${mm}:${ss}`);
+      if(mm === "00" && ss === "00"){
+        props.setSession(!props.session);
+      }
     }
   }
 
@@ -66,7 +85,7 @@ export default function Clock(props) {
 
   return (
     <div class="clock">
-      <h3 id="timer-label">Session</h3>
+      <h3 id="timer-label">{props.session ? "Session" : "Break"}</h3>
       <h1 id="time-left">{timeStamp}</h1>
       <span id="start_stop" onClick={Run}>
         <img src={start}></img>

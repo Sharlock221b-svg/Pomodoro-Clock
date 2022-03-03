@@ -44,10 +44,10 @@ function App() {
     setBl(5);
     setSl(25);
     setRun(false)
+    setSession(true);
   }
 
  
-
   return (
     <div className="App">
       <div className="head">
@@ -55,7 +55,8 @@ function App() {
       </div>
       <Break bl={bl} inc={incBl} dec={decBl}/>
       <Session sl={sl} inc={incSl} dec={decSl}/>
-      <Clock reset={reset} session={session} sl={sl} bl={bl} run={run} handleRun={handleRun}/>
+      <Clock reset={reset} session={session} sl={sl} bl={bl} run={run} handleRun={handleRun}
+      setSession={setSession}/>
     </div>
   );
 }
