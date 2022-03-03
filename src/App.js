@@ -10,27 +10,31 @@ function App() {
   const [session,setSession] = React.useState(true);
   const [run,setRun] = React.useState(false);
 
+  function handleRun(){
+    setRun(!run);
+  }
+
   function incBl(){
-    if(bl === 60){
+    if(bl === 60 || run){
       return;
     }
     setBl((bl) => bl+1);
   }
   function decBl(){
-    if(bl === 1){
+    if(bl === 1 || run){
       return;
     }
     setBl((bl) => bl-1);
   }
 
   function incSl(){
-    if(sl === 60){
+    if(sl === 60 || run){
       return;
     }
     setSl((sl) => sl+1);
   }
   function decSl(){
-    if(sl === 1){
+    if(sl === 1 || run){
       return;
     }
     setSl((sl) => sl-1);
@@ -39,6 +43,7 @@ function App() {
   function reset(){
     setBl(5);
     setSl(25);
+    setRun(false)
   }
 
  
@@ -50,7 +55,7 @@ function App() {
       </div>
       <Break bl={bl} inc={incBl} dec={decBl}/>
       <Session sl={sl} inc={incSl} dec={decSl}/>
-      <Clock reset={reset} session={session} sl={sl} bl={bl}/>
+      <Clock reset={reset} session={session} sl={sl} bl={bl} run={run} handleRun={handleRun}/>
     </div>
   );
 }
