@@ -70,7 +70,7 @@ export default function Clock(props) {
 
   let interval;
   React.useEffect(() => {
-    console.log("run");
+   // console.log("run");
     if (props.run) {
       interval = setInterval(handle, 1000);
       return () => clearInterval(interval);

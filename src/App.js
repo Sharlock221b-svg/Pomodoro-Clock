@@ -53,8 +53,10 @@ function App() {
       <div className="head">
         <h2>25 + 5 Clock</h2>
       </div>
+      <div class="bs">
       <Break bl={bl} inc={incBl} dec={decBl}/>
       <Session sl={sl} inc={incSl} dec={decSl}/>
+      </div>
       <Clock reset={reset} session={session} sl={sl} bl={bl} run={run} handleRun={handleRun}
       setSession={setSession}/>
     </div>

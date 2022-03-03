@@ -1,14 +1,25 @@
+*{
+  font-family: 'Quicksand', sans-serif;
+ 
+}
+
+body{
+  background-color: rgb(156, 196, 231);
+}
+
 .App{
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid black;
   width: 70%;
   text-align: center;
+  margin-top: 35px;
 }
 
 .head h2{
   text-align: center;
+  font-size: 250%;
+  font-weight: 700;
 }
 
 .break img{
@@ -34,11 +45,58 @@
 }
 
 .clock img{
-  height: 25px;
+  height: 30px;
   image-rendering: auto;
 }
 
 .clock span{
-    background-color: rgb(107, 192, 248);
+    background-color: rgb(39, 60, 117);
     margin-right: 9px;
+    padding-bottom: 5px;
+    padding-top: 2px;
+    border-radius: 2px;
+}
+
+.bs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#timer-label{
+   font-size: 35px;
+   font-weight: 500;
+}
+
+.clock{
+  margin-top: 30px;
+}
+
+#time-left{
+   font-size: 60px;
+   padding-top: 10px;
+   margin-bottom: 30px;
+}
+
+#start_stop{
+    font-weight: 900;
+}
+
+#reset{
+  margin-left: 30px;
+}
+
+.break{
+  margin: 20px;
+}
+
+.session{
+  margin: 20px;
+  margin-left: 30px;
+}
+
+@media (max-width: 660px){
+  .App{
+    width: 90%;
+  }
 }
