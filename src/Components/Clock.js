@@ -44,6 +44,8 @@ export default function Clock(props) {
       setTimeStamp(`${mm}:${ss}`);
       if(mm === "00" && ss === "00"){
         props.setSession(!props.session);
+        let sound = document.getElementById("beep");
+        sound.play();
       }
     }
     else{
@@ -60,6 +62,8 @@ export default function Clock(props) {
       setTimeStamp(`${mm}:${ss}`);
       if(mm === "00" && ss === "00"){
         props.setSession(!props.session);
+        let sound = document.getElementById("beep");
+        sound.play();
       }
     }
   }
@@ -81,6 +85,8 @@ export default function Clock(props) {
     props.reset();
     setTime(25*60-1);
     setTimeStamp("25:00");
+    document.getElementById("beep").pause();
+    document.getElementById("beep").currentTime = 0;
   }
 
   return (
@@ -92,6 +98,11 @@ export default function Clock(props) {
         <img src={pause}></img>
       </span>
       <img src={Restart} id="reset" onClick={Reset}></img>
+      <audio
+          id="beep"
+          preload="auto"
+          src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+        />
     </div>
   );
 }
